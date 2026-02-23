@@ -21,5 +21,7 @@ Create a Secret (or use External Secrets / 1Password) with:
 ## Install
 
 ```bash
-helm install persistent-petitioner . -n persistent-petitioner --create-namespace -f my-values.yaml
+helm install persistent-petitioner deploy/helm -n persistent-petitioner --create-namespace -f my-values.yaml
 ```
+
+Argo CD path: `deploy/helm`
