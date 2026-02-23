@@ -1,5 +1,6 @@
 # Persistent Petitioner — petition automation from email. IMAP + optional Playwright signing.
-# Secrets: EMAIL_IMAP_HOST, EMAIL_USER, EMAIL_PASSWORD, USER_FIRST_NAME, USER_LAST_NAME, USER_EMAIL, USER_ZIP_CODE, USER_PHONE (optional), DATABASE_URL (optional).
+# Designed for PostgreSQL (database name: petitions). No persistent storage required.
+# Secrets: DATABASE_URL (required, e.g. postgresql://user:pass@host:5432/petitions), EMAIL_IMAP_HOST, EMAIL_USER, EMAIL_PASSWORD, USER_FIRST_NAME, USER_LAST_NAME, USER_EMAIL, USER_ZIP_CODE, USER_PHONE (optional).
 # Use existingSecret, onepassworditem, or externalSecrets. See README.
 
 nameOverride: ""
@@ -29,9 +30,9 @@ env:
   automationEnabled: "false"
   emailCheckIntervalMinutes: "5"
 
-# Data persistence for SQLite (or use external Postgres via DATABASE_URL in secret)
+# Persistence disabled by default — use PostgreSQL (DATABASE_URL in secret). Enable only if using SQLite.
 persistence:
-  enabled: true
+  enabled: false
   mountPath: /app/data
   existingClaim: ""
   size: 1Gi
