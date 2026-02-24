@@ -4,11 +4,7 @@ on:
   push:
     branches: [main]
     paths:
-      - 'Chart.yaml'
-      - 'values.yaml'
-      - 'README.md'
-      - '.helmignore'
-      - 'templates/**'
+      - 'deploy/helm/**'
   workflow_dispatch:
 
 concurrency: release-persistent-petitioner
@@ -23,7 +19,7 @@ jobs:
         with:
           version: "v3.14.0"
       - name: Lint chart
-        run: helm lint .
+        run: helm lint deploy/helm
 
   release:
     needs: lint
