@@ -48,3 +48,4 @@ jobs:
           openai_api_key: ${{ secrets.OPENAI_API_KEY }}
           github_token: ${{ secrets.GITHUB_TOKEN }}
           release_tag: ${{ steps.tag.outputs.tag }}
+          prompt_instruction: "Include concrete datapoints: chart version, app version, migration notes, breaking changes, and key values."
