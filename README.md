@@ -2,6 +2,12 @@
 
 Deploy petition automation with IMAP email and optional Playwright signing. Designed for PostgreSQL; no persistent storage required.
 
+## 🗺️ Topology
+
+![persistent-petitioner topology](docs/img/topology.svg)
+
+<sub>Generated from this repo’s `values.yaml`, `Chart.yaml` and `argocd/` manifests. Source: [`docs/img/topology.mmd`](docs/img/topology.mmd).</sub>
+
 ## Secrets
 
 Create a Secret (or use External Secrets / 1Password) with:
